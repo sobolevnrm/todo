@@ -42,9 +42,12 @@ class TodoItem:
             self.parse_todo_str(todo_str)
     def parse_todo_str(self, todo_str):
         """ Parse a todo item formatted as a string """
-        match = PRIORITY_RE.search(todo_str)
+        self.todo_str = todo_str
+        _str = todo_str
+        match = PRIORITY_RE.search(_str)
         try:
             self.priority = match.expand("\g<1>").upper()
+            print(math.span)
         except AttributeError:
             self.priority = None
         try:
