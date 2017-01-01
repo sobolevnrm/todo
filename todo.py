@@ -20,12 +20,13 @@ def setup_folders(path):
     for _ in range(366):
         month = date.strftime("%m")
         day = date.strftime("%d")
-        folder = os.path.join(path, month, day)
+        folder = os.path.join(month, day)
         folder_list.append(folder)
         date = date + one_day
     # Other folders
     for folder in folder_list:
-        os.makedirs(name=folder, exist_ok=True)
+        folder_path = os.path.join(path, folder)
+        os.makedirs(name=folder_path, exist_ok=True)
 
 class TodoItem:
     """ A todo item """
