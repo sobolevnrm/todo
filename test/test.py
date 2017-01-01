@@ -1,7 +1,7 @@
 """ Test suite for todo package """
 import unittest
 import tempfile
-import todo
+from todo import todo
 import datetime as dt
 
 _STRING_VARIABLES = {
